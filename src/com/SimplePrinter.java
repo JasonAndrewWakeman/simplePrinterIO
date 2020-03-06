@@ -4,11 +4,14 @@ import java.util.Scanner;
 
 public class SimplePrinter {
 
+
     /**
      * @param args
      */
     public static void main(String[] args) {
         {
+
+            Printer printer = new Printer();
 
             System.out.println("I am a printer.");
             System.out.println("initialized");
@@ -21,11 +24,11 @@ boolean shouldQuit = false;
                 input = scan.next();
                 if(input.equals("1"))
                 {
-                    System.out.println("You pressed 1");
+                    printer.performPrint(scan);
                 } else if (input.equals("2")){
-                System.out.println("You pressed 2");
+                    printer.performInkAddition();
                 } else if (input.equals("3")){
-                System.out.println("You pressed 3");
+                    printer.performPaperAddition();
                 }else if (input.equalsIgnoreCase("quit")){
                     System.out.println("FINE THEN!!!");
                     shouldQuit = true;
@@ -37,5 +40,8 @@ boolean shouldQuit = false;
             while (shouldQuit != true);
 
         }
+
+
     }
+
 }
